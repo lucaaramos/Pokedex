@@ -25,13 +25,17 @@ export default function Pokemons() {
   if(loading || !pokemons){
     return <LoadingScreen/>
   }
+
+  const filteredPokemons = pokemons?.slice(0,151).filter((pokemon) => {
+    return pokemon.name.toLowerCase().match(query.toLowerCase());
+  })
   
   return (
     <>
     <Header query ={query} setQuery={setQuery}/>
     <main>
         <nav className={styles.nav}>
-          {pokemons?.slice(0,151).map((pokemon) => (
+          {filteredPokemons?.slice(0,151).map((pokemon) => (
             <Link key={pokemon.id} className={styles.listItems} to={`pokemons/${pokemon.name.toLowerCase}`}>
           <img
           className={styles.listitemsIcon}

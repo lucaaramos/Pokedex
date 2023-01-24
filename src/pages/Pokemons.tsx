@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
 
-export default function pokemons() {
+export default function Pokemons() {
+  const [query, setQuery] = useState("");
   return (
-    <div>pokemons</div>
-  )
+    <>
+    <Header query ={query} setQuery={setQuery}/>
+    <main>
+        poke
+    </main>
+    <Footer/>
+    </>
+  );
 }

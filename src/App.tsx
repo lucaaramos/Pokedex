@@ -3,6 +3,9 @@ import { Route, Routes } from 'react-router';
 import {BrowserRouter as Router } from 'react-router-dom';
 
 import './App.css';
+import { Items, Pokemon, Pokemons } from './pages';
+
+
 
 function App() {
   return (
@@ -11,7 +14,7 @@ function App() {
       <Routes>
       <Route path='/pokemons/:items' element={<Items/>}/>
       <Route path='/pokemons' element={<Pokemons/>}/>
-      <Route path='/pokemons/:name' element={<Pokemons/>}/>  
+      <Route path='/pokemons/:name' element={<Pokemon/>}/>  
       <Route path='/' element={<Pokemons/>}/>
       </Routes>
       <header className="App-header">
